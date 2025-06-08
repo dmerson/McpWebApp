@@ -1,0 +1,25 @@
+﻿@page
+@model McpWebApp.Pages.ContactPhones.CreateModel
+@{
+    ViewData["Title"] = "Create Contact Phone";
+}
+<h1>Create Contact Phone</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="ContactPhone.PhoneType"></label>
+        <input asp-for="ContactPhone.PhoneType" class="form-control" />
+        <span asp-validation-for="ContactPhone.PhoneType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactPhone.PhoneNumber"></label>
+        <input asp-for="ContactPhone.PhoneNumber" class="form-control" />
+        <span asp-validation-for="ContactPhone.PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactPhone.ContactId"></label>
+        <input asp-for="ContactPhone.ContactId" class="form-control" />
+        <span asp-validation-for="ContactPhone.ContactId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+</form>

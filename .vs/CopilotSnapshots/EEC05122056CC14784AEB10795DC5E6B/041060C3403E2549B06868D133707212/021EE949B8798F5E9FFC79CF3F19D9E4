@@ -1,0 +1,35 @@
+﻿@page
+@model McpWebApp.Pages.Contacts.IndexModel
+@{
+    ViewData["Title"] = "Contacts";
+}
+<h1>Contacts</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthdate</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Contacts) {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Birthdate.ToShortDateString()</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-page="/ContactAddresses/Index" asp-route-id="@item.Id">Addresses</a> |
+                <a asp-page="/ContactPhones/Index" asp-route-id="@item.Id">Phones</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

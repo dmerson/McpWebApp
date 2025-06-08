@@ -1,0 +1,26 @@
+@page "{id:int}"
+@model McpWebApp.Pages.Contacts.EditModel
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+<h1>Edit Contact</h1>
+<form method="post">
+    <input type="hidden" asp-for="Contact.Id" />
+    <div class="form-group">
+        <label asp-for="Contact.FirstName"></label>
+        <input asp-for="Contact.FirstName" class="form-control" />
+        <span asp-validation-for="Contact.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Contact.LastName"></label>
+        <input asp-for="Contact.LastName" class="form-control" />
+        <span asp-validation-for="Contact.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Contact.Birthdate"></label>
+        <input asp-for="Contact.Birthdate" class="form-control" type="date" />
+        <span asp-validation-for="Contact.Birthdate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+</form>

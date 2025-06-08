@@ -1,0 +1,11 @@
+# Ignore GitHub snapshot files and folders
+.github/snapshots/
+*.snap
+*.snapshot
+
+# Ignore bin folders
+bin/
+**/bin/
+
+# Ignore Visual Studio folder
+.vs/
