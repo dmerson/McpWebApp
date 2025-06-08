@@ -7,5 +7,9 @@
 bin/
 **/bin/
 
+# Ignore obj folders
+obj/
+**/obj/
+
 # Ignore Visual Studio folder
 .vs/
