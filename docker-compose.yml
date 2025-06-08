@@ -1,0 +1,27 @@
+﻿version: '3.9'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123!
+    ports:
+      - "1433:1433"
+    networks:
+      - mcpnet
+
+  mcpwebapp:
+    build: .
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "8080:80"
+    networks:
+      - mcpnet
+
+networks:
+  mcpnet:
+    driver: bridge
